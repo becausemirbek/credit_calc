@@ -10,8 +10,12 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 
   document.querySelector("#get").addEventListener("click", () => {
+    if(isNaN(sumInp.value) || isNaN(percentInp.value)) return alert("Необходимо вводить только цифры")
     if(!sumInp.value || !timeInp.value || !percentInp.value) return alert("Заполните поля")
+
     document.querySelector("#itog").innerHTML = "";
+    document.querySelector("#firstMessage").innerHTML = ""
+
     let percent = parseInt(percentInp.value)
     percentInp.value = "";
     let time = parseInt(timeInp.value)
